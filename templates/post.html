@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+{% block title %}{{ post_title }} · 나의 공간{% endblock %}
+{% block header_actions %}
+<form class="logout-form" method="post" action="{{ url_for('logout') }}">
+  <input type="hidden" name="csrf_token" value="{{ csrf_token() }}">
+  <button class="button button-quiet" type="submit">
+    로그아웃
+    <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M9 5H5v14h4M14 8l4 4-4 4M9 12h9"/></svg>
+  </button>
+</form>
+{% endblock %}
+{% block content %}
+<div class="post-layout">
+  <div class="welcome">
+    <span class="eyebrow"><span class="eyebrow-dot" aria-hidden="true"></span>나만의 작은 쉼표</span>
+    <p><strong>{{ username }}</strong>님, 반가워요.<br>오늘도 편안히 머물다 가세요.</p>
+  </div>
+  <article class="post-card" aria-labelledby="post-title">
+    <div class="post-label"><span aria-hidden="true">✦</span> 나의 이야기</div>
+    <h1 id="post-title">{{ post_title }}</h1>
+    <div class="post-divider" aria-hidden="true"></div>
+    <div class="post-body">{{ post_body }}</div>
+    <div class="post-end" aria-hidden="true">· · ·</div>
+  </article>
+</div>
+{% endblock %}

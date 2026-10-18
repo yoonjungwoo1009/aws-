@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="color-scheme" content="light">
+    <meta name="theme-color" content="#f6f5fa">
+    <title>{% block title %}나의 공간{% endblock %}</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+  </head>
+  <body>
+    <a class="skip-link" href="#main-content">본문으로 바로가기</a>
+    <div class="site-shell">
+      <header class="site-header">
+        <a class="brand" href="{{ url_for('login') }}" aria-label="나의 공간 홈">
+          <span class="brand-mark" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none">
+              <path d="M8 10V7a4 4 0 0 1 8 0v3M7 10h10a2 2 0 0 1 2 2v7a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2v-7a2 2 0 0 1 2-2Z"/>
+              <path d="M12 14v3"/>
+            </svg>
+          </span>
+          나의 공간<span class="brand-dot" aria-hidden="true">.</span>
+        </a>
+        {% block header_actions %}<span class="header-caption">작고 소중한 이야기의 시작</span>{% endblock %}
+      </header>
+      <main id="main-content" class="main-content" tabindex="-1">
+        {% block content %}{% endblock %}
+      </main>
+      <footer class="site-footer">잠시 머물러도 좋은, 나만의 공간.</footer>
+    </div>
+  </body>
+</html>

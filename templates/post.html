@@ -1,5 +1,5 @@
 {% extends "base.html" %}
-{% block title %}{{ post_title }} · 나의 공간{% endblock %}
+{% block title %}{{ post_title }} · 합격자 조회{% endblock %}
 {% block header_actions %}
 <form class="logout-form" method="post" action="{{ url_for('logout') }}">
   <input type="hidden" name="csrf_token" value="{{ csrf_token() }}">

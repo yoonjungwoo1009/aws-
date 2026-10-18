@@ -1,12 +1,13 @@
 :root {
   color-scheme: light;
-  --background: #f6f5fa;
-  --surface: #fff;
-  --text: #242232;
-  --muted: #716d81;
-  --accent: #7052c8;
-  --accent-hover: #6042b5;
-  --line: #e9e6f0;
+  --background: #f5f3ed;
+  --surface: #fffefa;
+  --text: #263d33;
+  --muted: #626b5f;
+  --accent: #234c3c;
+  --accent-hover: #183e2f;
+  --gold: #ab8954;
+  --line: #e4e4d9;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Noto Sans KR", "Apple SD Gothic Neo", "Malgun Gothic", sans-serif;
   font-synthesis: none;
   text-rendering: optimizeLegibility;
@@ -17,97 +18,127 @@
 body {
   margin: 0;
   color: var(--text);
-  background: radial-gradient(ellipse at 15% 22%, #eeebf9 0, transparent 43%), radial-gradient(ellipse at 92% 70%, #eeecf7 0, transparent 42%), var(--background);
+  background: radial-gradient(ellipse at 90% 10%, #ece8dc 0, transparent 48%), radial-gradient(ellipse at 8% 90%, #e7ebe2 0, transparent 45%), var(--background);
   font-size: 15px;
   line-height: 1.6;
 }
 button, input { font: inherit; }
 button, a, input { -webkit-tap-highlight-color: transparent; }
 button { cursor: pointer; }
-svg { flex-shrink: 0; stroke: currentColor; stroke-width: 1.7; stroke-linecap: round; stroke-linejoin: round; }
+svg { flex-shrink: 0; stroke: currentColor; stroke-width: 1.6; stroke-linecap: round; stroke-linejoin: round; }
 a { color: inherit; }
-::selection { background: #e6ddfc; }
-:focus-visible { outline: 3px solid #a88be8; outline-offset: 4px; }
+::selection { color: #183e2f; background: #dce6d7; }
+:focus-visible { outline: 3px solid #718f78; outline-offset: 4px; }
 .site-shell { display: flex; flex-direction: column; min-height: 100vh; min-height: 100svh; }
-.site-header { width: min(1120px, 100%); min-height: 100px; margin: 0 auto; padding: 24px 40px; display: flex; align-items: center; justify-content: space-between; gap: 24px; }
-.brand { display: inline-flex; align-items: center; gap: 10px; font-size: 18px; font-weight: 750; letter-spacing: -.7px; text-decoration: none; white-space: nowrap; }
-.brand-mark { width: 31px; height: 35px; display: grid; place-items: center; color: var(--accent); }
-.brand-mark svg { width: 23px; height: 23px; }
-.brand-dot { color: var(--accent); margin-left: -8px; }
-.header-caption { font-size: 12px; color: var(--muted); letter-spacing: -.1px; }
-.main-content { flex: 1; width: 100%; display: grid; place-items: center; padding: 32px 24px 60px; outline: none; }
-.site-footer { padding: 22px 24px 28px; text-align: center; color: var(--muted); font-size: 12px; letter-spacing: .1px; }
+.site-header { width: min(1200px, 100%); min-height: 112px; margin: 0 auto; padding: 28px 44px; display: flex; align-items: center; justify-content: space-between; gap: 24px; }
+.brand { display: inline-flex; align-items: center; gap: 12px; font-size: 17px; font-weight: 650; letter-spacing: -.65px; text-decoration: none; white-space: nowrap; }
+.brand-mark { width: 35px; height: 35px; display: grid; place-items: center; color: var(--accent); }
+.brand-mark svg { width: 31px; height: 31px; stroke-width: 1.25; }
+.header-caption { color: #69736a; font-size: 10px; font-weight: 550; letter-spacing: 2.1px; }
+.main-content { flex: 1; width: 100%; display: grid; place-items: center; padding: 48px 44px 72px; outline: none; }
+.site-footer { padding: 22px 24px 30px; text-align: center; color: var(--muted); font-size: 11px; letter-spacing: .35px; }
 .skip-link { position: absolute; z-index: 2; top: 12px; left: 12px; padding: 10px 16px; border-radius: 8px; color: #fff; background: var(--accent); transform: translateY(-180%); }
 .skip-link:focus { transform: translateY(0); }
-.login-layout { width: 100%; max-width: 460px; }
-.intro { margin-bottom: 32px; text-align: center; }
-.eyebrow { display: inline-flex; align-items: center; gap: 7px; color: var(--accent); font-size: 12px; font-weight: 600; letter-spacing: -.1px; }
-.eyebrow-dot { width: 5px; height: 5px; border-radius: 50%; background: currentColor; }
-.intro h1 { margin: 14px 0 12px; font-size: clamp(23px, 4.6vw, 29px); font-weight: 750; letter-spacing: -1.2px; line-height: 1.4; word-break: keep-all; }
-.accent-dot { color: var(--accent); }
-.intro-description { margin: 0; color: var(--muted); font-size: 14px; line-height: 1.9; letter-spacing: -.25px; word-break: keep-all; }
-.login-card { padding: 35px 36px 24px; border: 1px solid rgba(227, 223, 237, .85); border-radius: 22px; background: var(--surface); box-shadow: 0 18px 60px -25px rgba(58, 39, 100, .19), 0 4px 12px rgba(58, 39, 100, .025); }
-.card-heading { margin-bottom: 27px; }
-.card-icon { display: grid; place-items: center; width: 42px; height: 42px; margin-bottom: 19px; border: 1px solid #eae3f9; border-radius: 13px; color: var(--accent); background: #f7f4fd; }
-.card-icon svg { width: 22px; height: 22px; }
-.card-heading h2 { margin: 0 0 6px; font-size: 21px; font-weight: 700; letter-spacing: -.7px; }
-.card-heading p { margin: 0; color: var(--muted); font-size: 13px; letter-spacing: -.2px; }
-.login-form { display: flex; flex-direction: column; gap: 19px; }
-.form-field label { display: block; margin: 0 0 8px; color: #484355; font-size: 13px; font-weight: 650; }
+.login-layout { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 450px); align-items: center; gap: 88px; width: 100%; max-width: 1060px; }
+.intro { padding: 12px 0; }
+.eyebrow { display: inline-flex; align-items: center; gap: 12px; color: var(--accent); font-size: 11px; font-weight: 650; letter-spacing: 3px; }
+.eyebrow-line { width: 30px; height: 1px; background: var(--gold); }
+.eyebrow-dot { width: 5px; height: 5px; border-radius: 50%; background: var(--gold); }
+.intro-kicker { margin: 42px 0 9px; color: #596b5e; font-size: 17px; font-weight: 400; letter-spacing: -.6px; word-break: keep-all; }
+.intro h1 { margin: 0; font-family: "Noto Serif CJK KR", "Nanum Myeongjo", "AppleMyungjo", "Batang", Georgia, serif; font-size: clamp(45px, 5.4vw, 64px); font-weight: 500; letter-spacing: -3.7px; line-height: 1.45; word-break: keep-all; }
+.intro-description { margin: 24px 0 0; color: var(--muted); font-size: 14px; line-height: 2; letter-spacing: -.25px; word-break: keep-all; }
+.intro-signature { display: flex; align-items: center; gap: 15px; margin-top: 74px; color: #8c795a; font-family: Georgia, "Times New Roman", serif; font-size: 17px; font-style: italic; letter-spacing: .2px; }
+.signature-line { width: 44px; height: 1px; background: #bbab8b; }
+.login-card { min-width: 0; padding: 43px 39px 28px; border: 1px solid rgba(255, 255, 255, .9); border-radius: 24px; background: var(--surface); box-shadow: 0 24px 70px -25px rgba(49, 61, 43, .15), 0 3px 12px rgba(49, 61, 43, .025); }
+.card-heading { margin-bottom: 31px; }
+.card-eyebrow { display: block; margin-bottom: 15px; color: #857049; font-size: 9px; font-weight: 650; letter-spacing: 2px; }
+.card-heading h2 { margin: 0 0 9px; font-size: 27px; font-weight: 650; letter-spacing: -1px; }
+.card-heading p { margin: 0; color: var(--muted); font-size: 12px; letter-spacing: -.2px; word-break: keep-all; }
+.login-form { display: flex; flex-direction: column; gap: 21px; }
+.form-field label { display: block; margin: 0 0 9px; color: #455449; font-size: 12px; font-weight: 650; }
 .input-wrap { position: relative; }
-.input-wrap > svg { position: absolute; top: 50%; left: 15px; width: 18px; height: 18px; color: #9690a6; pointer-events: none; transform: translateY(-50%); }
-.input-wrap input { display: block; width: 100%; height: 50px; padding: 0 14px 0 43px; border: 1px solid #e1ddea; border-radius: 9px; outline: none; color: var(--text); background: #fdfcfe; font-size: 14px; transition: border-color .18s ease, box-shadow .18s ease, background .18s ease; }
-.input-wrap input::placeholder { color: #756d84; opacity: 1; font-size: 13px; }
-.input-wrap input:hover { border-color: #b7abcc; }
-.input-wrap input:focus { border-color: #9574da; background: #fff; box-shadow: 0 0 0 3px #eee7fc; }
+.input-wrap > svg { position: absolute; top: 50%; left: 17px; width: 18px; height: 18px; color: #909a8f; pointer-events: none; transform: translateY(-50%); }
+.input-wrap input { display: block; width: 100%; min-width: 0; height: 55px; padding: 0 15px 0 46px; border: 1px solid var(--line); border-radius: 10px; outline: none; color: var(--text); background: #fbfbf7; font-size: 14px; transition: border-color .2s ease, box-shadow .2s ease, background .2s ease; }
+.input-wrap input::placeholder { color: #6e7669; opacity: 1; font-size: 12px; }
+.input-wrap input:hover { border-color: #b6c0b0; }
+.input-wrap input:focus { border-color: #6c8c75; background: #fffefa; box-shadow: 0 0 0 3px #e7ede2; }
 .input-wrap:focus-within > svg { color: var(--accent); }
-.button { display: inline-flex; align-items: center; justify-content: center; gap: 10px; border: 0; border-radius: 9px; font-weight: 600; text-decoration: none; transition: background .18s ease, box-shadow .18s ease, transform .18s ease; }
+.button { display: inline-flex; align-items: center; justify-content: center; gap: 13px; border: 0; border-radius: 10px; font-weight: 600; text-decoration: none; transition: background .2s ease, box-shadow .2s ease, transform .2s ease; }
 .button svg { width: 18px; height: 18px; }
-.button-primary { min-height: 51px; width: 100%; margin-top: 7px; padding: 13px 18px; color: #fff; background: var(--accent); font-size: 14px; box-shadow: 0 4px 10px rgba(112, 82, 200, .12); }
-.button-primary:hover { background: var(--accent-hover); box-shadow: 0 6px 15px rgba(112, 82, 200, .21); transform: translateY(-1px); }
+.button-primary { min-height: 55px; width: 100%; margin-top: 7px; padding: 14px 18px; color: #fffefa; background: var(--accent); font-size: 13px; letter-spacing: -.1px; box-shadow: 0 5px 12px rgba(35, 76, 60, .1); }
+.button-primary:hover { background: var(--accent-hover); box-shadow: 0 8px 18px rgba(35, 76, 60, .18); transform: translateY(-1px); }
 .button-primary:active { transform: translateY(0); }
 .button-primary svg { width: 17px; height: 17px; }
-.card-note { display: flex; justify-content: center; align-items: center; gap: 6px; margin: 25px 0 0; padding-top: 21px; border-top: 1px solid #efedf4; color: var(--muted); font-size: 11px; letter-spacing: -.1px; }
-.card-note svg { width: 14px; height: 14px; stroke-width: 1.5; }
-.error-message { display: flex; align-items: flex-start; gap: 8px; margin-bottom: 20px; padding: 12px 13px; border: 1px solid #f1d7dc; border-radius: 9px; color: #a4374a; background: #fff5f6; font-size: 12px; line-height: 1.7; }
+.card-note { display: flex; justify-content: center; align-items: center; gap: 7px; margin: 29px 0 0; padding-top: 23px; border-top: 1px solid #eeeee5; color: var(--muted); font-size: 11px; letter-spacing: -.1px; text-align: center; }
+.card-note svg { width: 14px; height: 14px; stroke-width: 1.4; }
+.error-message { display: flex; align-items: flex-start; gap: 8px; margin-bottom: 23px; padding: 12px 13px; border: 1px solid #ead8ce; border-radius: 10px; color: #994b36; background: #fcf3ec; font-size: 12px; line-height: 1.7; overflow-wrap: anywhere; }
 .error-message svg { width: 17px; height: 17px; margin-top: 2px; }
 .logout-form { margin: 0; }
-.button-quiet { min-height: 40px; padding: 8px 13px; border: 1px solid #e0dbe9; color: #625b74; background: rgba(255, 255, 255, .65); font-size: 12px; }
-.button-quiet:hover { color: var(--accent); background: #fff; border-color: #cfc0e9; }
+.button-quiet { min-height: 40px; padding: 8px 14px; border: 1px solid #d9dfd3; color: #4e6555; background: rgba(255, 254, 250, .7); font-size: 12px; }
+.button-quiet:hover { color: var(--accent-hover); background: var(--surface); box-shadow: 0 3px 10px rgba(35, 76, 60, .06); }
 .button-quiet svg { width: 16px; height: 16px; }
-.post-layout { width: 100%; max-width: 700px; }
+.post-layout { width: 100%; max-width: 760px; }
 .welcome { margin: 0 3px 29px; }
-.welcome p { margin: 11px 0 0; color: var(--muted); font-size: 15px; line-height: 1.85; letter-spacing: -.25px; }
+.welcome .eyebrow { gap: 8px; letter-spacing: .2px; }
+.welcome p { margin: 13px 0 0; color: var(--muted); font-size: 15px; line-height: 1.9; letter-spacing: -.25px; }
 .welcome strong { color: var(--text); font-weight: 650; overflow-wrap: anywhere; }
-.post-card { padding: 45px 48px 30px; border: 1px solid #e7e2ef; border-radius: 21px; background: var(--surface); box-shadow: 0 18px 60px -25px rgba(58, 39, 100, .13); }
-.post-label { display: flex; align-items: center; gap: 7px; margin-bottom: 16px; color: var(--accent); font-size: 12px; font-weight: 600; }
+.post-card { padding: 46px 49px 32px; border: 1px solid rgba(255, 255, 255, .9); border-radius: 24px; background: var(--surface); box-shadow: 0 24px 70px -25px rgba(49, 61, 43, .13); }
+.post-label { display: flex; align-items: center; gap: 8px; margin-bottom: 18px; color: #887149; font-size: 12px; font-weight: 600; }
 .post-label span { font-size: 16px; }
-.post-card h1 { margin: 0; font-size: clamp(24px, 4.8vw, 31px); font-weight: 700; line-height: 1.5; letter-spacing: -1px; overflow-wrap: anywhere; word-break: keep-all; }
-.post-divider { width: 35px; height: 2px; margin: 25px 0 30px; border-radius: 2px; background: #d9cdee; }
-.post-body { color: #575164; font-size: 15px; line-height: 2; letter-spacing: -.15px; white-space: pre-wrap; overflow-wrap: anywhere; }
-.post-end { margin-top: 34px; color: #bcb1d0; font-size: 18px; text-align: center; letter-spacing: 5px; }
+.post-card h1 { margin: 0; font-family: "Noto Serif CJK KR", "Nanum Myeongjo", "AppleMyungjo", "Batang", Georgia, serif; font-size: clamp(24px, 4.8vw, 31px); font-weight: 500; line-height: 1.6; letter-spacing: -1px; overflow-wrap: anywhere; word-break: keep-all; }
+.post-divider { width: 36px; height: 1px; margin: 26px 0 30px; background: #c4ae86; }
+.post-body { color: #566153; font-size: 15px; line-height: 2.1; letter-spacing: -.15px; white-space: pre-wrap; overflow-wrap: anywhere; }
+.post-end { margin-top: 34px; color: #b4a484; font-size: 18px; text-align: center; letter-spacing: 5px; }
 
-@media (max-width: 600px) {
-  .site-header { min-height: 80px; padding: 20px 24px; }
-  .header-caption { display: none; }
-  .main-content { padding: 22px 20px 37px; }
-  .intro { margin-bottom: 26px; }
-  .login-card { padding: 28px 25px 21px; border-radius: 18px; }
-  .card-heading { margin-bottom: 24px; }
-  .card-heading h2 { font-size: 20px; }
+@media (max-width: 900px) {
+  .site-header { padding-inline: 32px; }
+  .main-content { padding: 34px 32px 58px; }
+  .login-layout { grid-template-columns: minmax(0, 1fr) minmax(0, 400px); gap: 40px; }
+  .intro h1 { font-size: 49px; letter-spacing: -3px; }
+  .intro-kicker { font-size: 15px; }
+  .intro-description { font-size: 13px; }
+  .login-card { padding-inline: 31px; }
+}
+
+@media (max-width: 720px) {
+  .site-header { min-height: 88px; padding: 22px 28px; }
+  .header-caption { font-size: 8px; letter-spacing: 1.4px; }
+  .main-content { padding: 32px 24px 48px; }
+  .login-layout { grid-template-columns: minmax(0, 1fr); max-width: 430px; gap: 33px; }
+  .intro { padding: 0; text-align: center; }
+  .intro-kicker { margin-top: 22px; font-size: 15px; }
+  .intro h1 { font-size: 47px; letter-spacing: -2.8px; }
+  .intro-description { margin-top: 15px; font-size: 13px; }
+  .intro-signature { display: none; }
+  .login-card { padding: 33px 31px 25px; }
+  .card-heading { margin-bottom: 27px; }
+  .card-eyebrow { margin-bottom: 11px; }
+  .card-heading h2 { font-size: 25px; }
   .input-wrap input { font-size: 16px; }
-  .site-footer { padding-bottom: 22px; font-size: 11px; }
-  .post-card { padding: 31px 26px 23px; border-radius: 18px; }
+  .site-footer { padding-bottom: 24px; font-size: 10px; }
+  .post-card { padding: 32px 28px 24px; border-radius: 20px; }
   .post-body { font-size: 14px; }
   .welcome { margin-bottom: 24px; }
 }
 
+@media (max-width: 480px) {
+  .site-header { padding-inline: 23px; }
+  .brand { gap: 9px; font-size: 16px; }
+  .brand-mark { width: 29px; height: 29px; }
+  .brand-mark svg { width: 27px; height: 27px; }
+  .header-caption { display: none; }
+  .main-content { padding-top: 23px; padding-inline: 21px; }
+  .login-card { border-radius: 21px; padding-inline: 25px; }
+}
+
 @media (max-width: 360px) {
   .site-header { padding-inline: 18px; }
-  .main-content { padding-inline: 15px; }
-  .login-card { padding-inline: 20px; }
-  .intro h1 { font-size: 22px; letter-spacing: -1px; }
-  .card-note { font-size: 10px; gap: 4px; }
+  .main-content { padding-inline: 16px; }
+  .intro h1 { font-size: 41px; letter-spacing: -2.6px; }
+  .intro-description { font-size: 12px; }
+  .login-card { padding-inline: 21px; }
+  .card-heading p { font-size: 11px; }
+  .card-note { gap: 5px; }
 }
 
 @media (prefers-reduced-motion: reduce) {
